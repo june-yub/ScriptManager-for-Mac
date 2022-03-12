@@ -32,3 +32,9 @@ var script: NSAppleScript = {
     return script
 }()
 }
+
+
+/**
+ https://gist.github.com/kcrawford/00994c6246472d73e6a8893cb84d3e9c
+ https://developer.apple.com/forums/thread/98830
+ */
