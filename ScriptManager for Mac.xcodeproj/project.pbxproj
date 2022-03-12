@@ -11,6 +11,9 @@
 		F89C89D927DB567F00D369F3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89C89D827DB567F00D369F3 /* ViewController.swift */; };
 		F89C89DB27DB568000D369F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F89C89DA27DB568000D369F3 /* Assets.xcassets */; };
 		F89C89DE27DB568000D369F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F89C89DC27DB568000D369F3 /* Main.storyboard */; };
+		F89C89E627DB572600D369F3 /* StatusItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89C89E527DB572600D369F3 /* StatusItemController.swift */; };
+		F89C89E927DB5AFD00D369F3 /* NSMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89C89E827DB5AFD00D369F3 /* NSMenuItem.swift */; };
+		F89C89EC27DC17B000D369F3 /* sampleScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89C89EB27DC17B000D369F3 /* sampleScript.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,10 @@
 		F89C89DA27DB568000D369F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F89C89DD27DB568000D369F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F89C89DF27DB568000D369F3 /* ScriptManager_for_Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ScriptManager_for_Mac.entitlements; sourceTree = "<group>"; };
+		F89C89E527DB572600D369F3 /* StatusItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItemController.swift; sourceTree = "<group>"; };
+		F89C89E827DB5AFD00D369F3 /* NSMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMenuItem.swift; sourceTree = "<group>"; };
+		F89C89EA27DB5B7900D369F3 /* ScriptManager-for-Mac-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "ScriptManager-for-Mac-Info.plist"; sourceTree = SOURCE_ROOT; };
+		F89C89EB27DC17B000D369F3 /* sampleScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sampleScript.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,13 +59,25 @@
 		F89C89D527DB567F00D369F3 /* ScriptManager for Mac */ = {
 			isa = PBXGroup;
 			children = (
+				F89C89EA27DB5B7900D369F3 /* ScriptManager-for-Mac-Info.plist */,
+				F89C89E727DB5AEC00D369F3 /* Extensions */,
 				F89C89D627DB567F00D369F3 /* AppDelegate.swift */,
 				F89C89D827DB567F00D369F3 /* ViewController.swift */,
+				F89C89E527DB572600D369F3 /* StatusItemController.swift */,
+				F89C89EB27DC17B000D369F3 /* sampleScript.swift */,
 				F89C89DA27DB568000D369F3 /* Assets.xcassets */,
 				F89C89DC27DB568000D369F3 /* Main.storyboard */,
 				F89C89DF27DB568000D369F3 /* ScriptManager_for_Mac.entitlements */,
 			);
 			path = "ScriptManager for Mac";
+			sourceTree = "<group>";
+		};
+		F89C89E727DB5AEC00D369F3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F89C89E827DB5AFD00D369F3 /* NSMenuItem.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,8 +150,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F89C89E927DB5AFD00D369F3 /* NSMenuItem.swift in Sources */,
+				F89C89EC27DC17B000D369F3 /* sampleScript.swift in Sources */,
 				F89C89D927DB567F00D369F3 /* ViewController.swift in Sources */,
 				F89C89D727DB567F00D369F3 /* AppDelegate.swift in Sources */,
+				F89C89E627DB572600D369F3 /* StatusItemController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,8 +207,10 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_APP_SANDBOX = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SELECTED_FILES = readwrite;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -201,7 +225,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -246,8 +270,10 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_APP_SANDBOX = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SELECTED_FILES = readwrite;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -256,7 +282,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -271,10 +297,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "ScriptManager for Mac/ScriptManager_for_Mac.entitlements";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ScriptManager-for-Mac-Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -282,6 +310,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "cactus.ScriptManager-for-Mac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -296,10 +325,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "ScriptManager for Mac/ScriptManager_for_Mac.entitlements";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ScriptManager-for-Mac-Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -307,6 +338,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "cactus.ScriptManager-for-Mac";
 				PRODUCT_NAME = "$(TARGET_NAME)";

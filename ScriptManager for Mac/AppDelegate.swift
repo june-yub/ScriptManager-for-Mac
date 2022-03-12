@@ -10,7 +10,7 @@ import Cocoa
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    
+    let statusItemController = StatusItemController()
 
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
